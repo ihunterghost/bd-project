@@ -56,6 +56,15 @@
                                     <option value="Gigante Vermelho">
                                 </datalist>
                         </p>
+                        <p>
+                            Morreu?
+                        <br>
+                            <input list="mortes" name="morreu">
+                                <datalist id="mortes">
+                                    <option value="Sim">
+                                    <option value="Não">
+                                </datalist>
+                        </p>
                         <p class="text-center">
                             <button type="submit" class=" badge badge-primary"name="send">Cadastrar</button>
                             <a class=" badge badge-secondary" href="{{ route('estrela')}}" name="back">Voltar</a>

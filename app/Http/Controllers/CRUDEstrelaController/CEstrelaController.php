@@ -15,7 +15,7 @@ class CEstrelaController extends Controller
     {
 
         try{
-            
+
             if(strcasecmp($request->tipo,"Anã Vermelha") == 0){
                 $request->tipo = 1;
             }else{
@@ -35,7 +35,13 @@ class CEstrelaController extends Controller
                     }
                 }
             }
-            echo $request->tipo;
+            if(strcasecmp($request->morreu,"Sim") == 0){
+                $request->morreu = 'true';
+            }else{
+                if(strcasecmp($request->morreu,"Não") == 0){
+                    $request->morreu = 'false';
+                }
+            }
     	    $estrela = DB::insert('INSERT INTO estrela VALUES(DEFAULT,?,?,?,?,?,?,?)',
     							[$request->nome_estrela,
     							$request->tam_estrela,
@@ -43,7 +49,7 @@ class CEstrelaController extends Controller
     							'false',
     							$request->dist_terra_estrela,
                                 $request->tipo,
-                                'false']);
+                                $request->morreu]);
             $msg = "Estrela de nome $request->nome_estrela foi inserida com sucesso.";
             $rt = "/estrela";
             return view('result',compact('msg','rt'));
