@@ -47,8 +47,14 @@
                         <p>
                             Tipo
                         <br>
-                            <input type="text" name="tipo" placeholder="informe o tipo" required="required"
-                            onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46">
+                            <input list="tipos" name="tipo">
+                                <datalist id="tipos">
+                                    <option value="Anã Vermelha">
+                                    <option value="Anã Branca">
+                                    <option value="Estrela Binária">
+                                    <option value="Gigante Azul">
+                                    <option value="Gigante Vermelho">
+                                </datalist>
                         </p>
                         <p class="text-center">
                             <button type="submit" class=" badge badge-primary"name="send">Cadastrar</button>

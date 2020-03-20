@@ -13,7 +13,29 @@ class CEstrelaController extends Controller
     
     public function createresponse(Request $request)
     {
+
         try{
+            
+            if(strcasecmp($request->tipo,"Anã Vermelha") == 0){
+                $request->tipo = 1;
+            }else{
+                if(strcasecmp($request->tipo,"Anã Branca") == 0){
+                    $request->tipo = 2;
+                }else{
+                    if(strcasecmp($request->tipo,"Estrela Binária") == 0){
+                        $request->tipo = 3;
+                    }else{
+                        if(strcasecmp($request->tipo,"Gigante Azul") == 0){
+                            $request->tipo = 4;
+                        }else{
+                            if(strcasecmp($request->tipo,"Gigante Vermelho") == 0){
+                                $request->tipo = 5;
+                            }
+                        }
+                    }
+                }
+            }
+            echo $request->tipo;
     	    $estrela = DB::insert('INSERT INTO estrela VALUES(DEFAULT,?,?,?,?,?,?,?)',
     							[$request->nome_estrela,
     							$request->tam_estrela,
