@@ -15,8 +15,8 @@ class CGalaxiaController extends Controller
     {
 
         try{
-    	    $galaxia = DB::insert('INSERT INTO galaxia VALUES(DEFAULT,?,?,?)',
-    							[$request->qtd_sistemas,
+    	    $galaxia = DB::insert('INSERT INTO galaxia VALUES(DEFAULT,0,?,?)',
+    							[
     							$request->dist_terra,
     							$request->nome_galaxia]);
             $msg = "Galaxia $request->nome_estrela inserida com sucesso";

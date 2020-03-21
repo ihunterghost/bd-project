@@ -17,12 +17,22 @@ class CSistController extends Controller
         try{
     	    $sist = DB::insert('INSERT INTO sist_planetario VALUES(DEFAULT,?,?,?,?,?)',
                                 [$request->nome_sist,
-                                $request->qtd_planetas,
-                                $request->qtd_estrelas,
     							$request->idade_sist,
     							$request->galaxia]);
             $msg = "Sistema Planetário de nome $request->nome_sist foi inserido com sucesso.";
             $rt = "/sist";
+
+            $glx = DB::select('SELECT qtd_sistemas 
+                                   FROM galaxia 
+                                   WHERE id_galaxia = ?',[$request->galaxia]);
+            $glx[0]->qtd_sistemas = $glx[0]->qtd_sistemas + 1;
+            $qnt = $glx[0]->qtd_sistemas;
+            echo $qnt;
+            $galaxiaupdate =  DB::update('UPDATE galaxia
+    			    SET qtd_sistemas = ?
+    			    WHERE id_galaxia = ?',
+    					  [$qnt,
+                          $request->galaxia]);
             return view('result',compact('msg','rt'));
         }catch(Exception $e){
             $msg = "Erro ao tentar inserir o Sistema Planetário.";

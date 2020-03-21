@@ -33,18 +33,6 @@
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </p>
                         <p>
-                            Qtd de Planetas
-                        <br>
-                            <input type="text" name="qtd_planetas" placeholder="informe a quantidade" required="required"
-                            onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                        </p>
-                        <p>
-                            Qtd de Estrelas
-                        <br>
-                            <input type="text" name="qtd_estrelas" placeholder="informe a quantidade" required="required"
-                            onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-                        </p>
-                        <p>
                             Galáxia
                         <br>
                             <input type="text" name="galaxia" placeholder="informe a galaxia" required="required"
