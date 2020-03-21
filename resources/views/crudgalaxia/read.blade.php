@@ -28,7 +28,7 @@
                             <input type="text" name="nome_galaxia" placeholder="informe a Galáxia" required="required">
                         </p>
                         <p class="text-center">
-                            <button type="submit" class=" badge badge-primary" name="send">Modificar</button>
+                            <button type="submit" class=" badge badge-primary" name="send">Buscar</button>
                             <a class=" badge badge-secondary" href="{{route('galaxia')}}" name="back">Voltar</a>
                         </p>
                     </form>
