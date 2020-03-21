@@ -44,26 +44,27 @@
                             <input type="text" name="dist_terra_estrela" placeholder="informe a distancia" required="required"
                             onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46">
                         </p>
-                        <p>
+			            <p>
                             Tipo
                         <br>
-                            <input list="tipos" name="tipo">
-                                <datalist id="tipos">
-                                    <option value="Anã Vermelha">
-                                    <option value="Anã Branca">
-                                    <option value="Estrela Binária">
-                                    <option value="Gigante Azul">
-                                    <option value="Gigante Vermelho">
-                                </datalist>
+		                    <input type="radio" id="av" name="tipo" value="Anã Vermelha">
+                            <label for="av">Anã Vermelha</label>
+                            <input type="radio" id="ab" name="tipo" value="Anã Branca">
+                            <label for="ab">Anã Branca</label>
+                            <input type="radio" id="eb" name="tipo" value="Estrela Binária">
+                            <label for="eb">Estrela Binária</label>
+                            <input type="radio" id="ga" name="tipo" value="Gigante Azul">
+                            <label for="ga">Gigante Azul</label>
+                            <input type="radio" id="gv" name="tipo" value="Gigante Vermelho">
+                            <label for="gv">Gigante Vermelho</label>
                         </p>
-                        <p>
+			            <p>
                             Morreu?
                         <br>
-                            <input list="mortes" name="morreu">
-                                <datalist id="mortes">
-                                    <option value="Sim">
-                                    <option value="Não">
-                                </datalist>
+                            <input type="radio" id="sim" name="morte" value="Sim">
+			                <label for="sim">Sim</label>
+			                <input type="radio" id="nao" name="morte" value="Não">
+			                <label for="nao">Não</label>
                         </p>
                         <p class="text-center">
                             <button type="submit" class=" badge badge-primary"name="send">Cadastrar</button>
