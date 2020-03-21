@@ -12,12 +12,13 @@ class UPlanetaSistController extends Controller
     
     public function updateresponse(Request $request)
     {
-      try{
-           
+      
+     try{
+          
         $planetasist =  DB::update('UPDATE planeta_sist
                                     SET
                                       planeta = ?,
-                                      sist_planetario = ?,
+                                      sist_planetario = ?
                                     
                                     WHERE id_planetasist = ?',
                                     [$request->planeta,
@@ -29,12 +30,12 @@ class UPlanetaSistController extends Controller
           return view('result',compact('msg','rt'));
         }else{
           $msg = "Erro ao tentar modificar a Planeta-Sist.";
-          $rt = "/planetasist/create";
+          $rt = "/planetasist/update";
           return view('result',compact('msg','rt'));
         }
       }catch(Exception $e){
         $msg = "Erro ao tentar modificar a Planeta-Sist.";
-        $rt = "/planetasist/create";
+        $rt = "/planetasist/update";
         return view('result',compact('msg','rt'));
       }
     }

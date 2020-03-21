@@ -41,7 +41,7 @@
                         <p>
                             Qtd de Estrelas
                         <br>
-                            <input type="text" name="qtd_planetas" placeholder="informe a quantidade" required="required"
+                            <input type="text" name="qtd_estrelas" placeholder="informe a quantidade" required="required"
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </p>
                         <p>

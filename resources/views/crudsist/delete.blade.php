@@ -24,7 +24,7 @@
                         <p>
                             Id do Sistema Planetário
                         <br>
-                            <input type="text" name="id_sn" placeholder="informe o identificador" required="required"
+                            <input type="text" name="id_sist" placeholder="informe o identificador" required="required"
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </p>
                         <p class="text-center">

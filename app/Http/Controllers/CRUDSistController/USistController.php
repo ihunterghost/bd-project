@@ -12,14 +12,14 @@ class USistController extends Controller
     
     public function updateresponse(Request $request)
     {   
-    	
+    	echo $request->nome_sist,  $request->idade_sist,$request->id_sist;
       try{
         $sist =  DB::update('UPDATE sist_planetario
     			    SET nome_sist = ?,
-    					  idade_sistema = ?,
+    					  idade_sist = ? 
     			    WHERE id_sist = ?',
     					  [$request->nome_sist,
-                $request->idade_sistema,
+                $request->idade_sist,
                 $request->id_sist]);
 
         if($sist == 1){
@@ -28,13 +28,13 @@ class USistController extends Controller
           return view('result',compact('msg','rt'));
         }else{
           $msg = "Erro ao tentar modificar o Sistema Planetário.";
-          $rt = "/sist/create";
+          $rt = "/sist/update";
           return view('result',compact('msg','rt'));
         }
               
       }catch(Exception $e){
         $msg = "Erro ao tentar modificar o Sistema Planetário.";
-        $rt = "/sist/create";
+        $rt = "/sist/update";
         return view('result',compact('msg','rt'));
       }
     }

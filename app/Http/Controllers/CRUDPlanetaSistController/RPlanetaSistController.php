@@ -11,9 +11,9 @@ class RPlanetaSistController extends Controller
 {
     public function readresponse(Request $request)
     {
-    	$sn = DB::select('SELECT ps.id_planetasist,
+    	$planetasist = DB::select('SELECT ps.id_planetasist,
                                  p.nome_planeta,
-                                 sp.nome_sist,
+                                 sp.nome_sist
                                 
 
                         FROM   planeta_sist ps JOIN sist_planetario sp
@@ -21,7 +21,7 @@ class RPlanetaSistController extends Controller
                                 ON (p.id_planeta = ps.planeta)
                                 WHERE id_planetasist = ?',
                                 [$request->id_planetasist]);
-        return view('crudresponseplanetasist/readresponse',compact('request'));
+        return view('crudresponseplanetasist/readresponse',compact('planetasist'));
     }
 
     public function read()

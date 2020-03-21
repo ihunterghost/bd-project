@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="{{route('planeta.deleteresponse')}}" method="post">
+                    <form action="{{route('buraconegro.deleteresponse')}}" method="post">
                         @csrf
                         <p>
                             Id do Buraco Negro

@@ -62,13 +62,13 @@ class UEstrelaController extends Controller
           return view('result',compact('msg','rt'));
         }else{
           $msg = "Erro ao tentar modificar a Estrela.";
-          $rt = "/estrela/create";
+          $rt = "/estrela/update";
           return view('result',compact('msg','rt'));
         }
               
       }catch(Exception $e){
         $msg = "Erro ao tentar modificar a Estrela.";
-        $rt = "/estrela/create";
+        $rt = "/estrela/update";
         return view('result',compact('msg','rt'));
       }
        

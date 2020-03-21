@@ -37,7 +37,7 @@
                         <p>
                             Quantidade de Sistemas
                         <br>
-                            <input type="text" name="dist_terra" placeholder="informe a quantidade" required="required"
+                            <input type="text" name="qtd_sistemas" placeholder="informe a quantidade" required="required"
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </p>
                         <p class="text-center">

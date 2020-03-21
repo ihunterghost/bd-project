@@ -13,9 +13,9 @@ class CSistController extends Controller
     
     public function createresponse(Request $request)
     {
-
+        
         try{
-    	    $sist = DB::insert('INSERT INTO sist_planetario VALUES(DEFAULT,?,0,0,?,?)',
+    	    $sist = DB::insert('INSERT INTO sist_planetario VALUES(DEFAULT,?,?,?,?,?)',
                                 [$request->nome_sist,
                                 $request->qtd_planetas,
                                 $request->qtd_estrelas,

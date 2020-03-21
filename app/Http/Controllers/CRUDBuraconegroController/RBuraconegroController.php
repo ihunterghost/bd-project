@@ -11,9 +11,9 @@ class RBuraconegroController extends Controller
 {
     public function readresponse(Request $request)
     {   
-        $orbitar = DB::select('SELECT   bn.id_buraconegro,
+        $buraconegro = DB::select('SELECT   bn.id_buraconegro,
                                         e.nome_estrela
-                            FROM buraconegro bn JOIN estrela e
+                            FROM buraco_negro bn JOIN estrela e
                                 ON(bn.estrela = e.id_estrela)
                             WHERE id_buraconegro = ?',
                         

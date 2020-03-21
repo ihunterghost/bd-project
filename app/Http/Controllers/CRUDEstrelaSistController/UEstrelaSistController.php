@@ -17,7 +17,7 @@ class UEstrelaSistController extends Controller
         $estrelasist =  DB::update('UPDATE estrela_sist
                 SET
                 estrela = ?,
-                sist_planetario = ?,
+                sist_planetario = ?
                 
                 WHERE id_estrelasist = ?',
                 [$request->estrela,
@@ -29,12 +29,12 @@ class UEstrelaSistController extends Controller
           return view('result',compact('msg','rt'));
         }else{
           $msg = "Erro ao tentar modificar a Estrela-Sist.";
-          $rt = "/estrelasist/create";
+          $rt = "/estrelasist/update";
           return view('result',compact('msg','rt'));
         }
       }catch(Exception $e){
         $msg = "Erro ao tentar modificar a Estrela-Sist.";
-        $rt = "/estrelasist/create";
+        $rt = "/estrelasist/update";
         return view('result',compact('msg','rt'));
       }
     }

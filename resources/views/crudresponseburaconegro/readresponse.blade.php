@@ -16,26 +16,24 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header text-center">
-                    BUSCAR PLANETA-SIST
+                    BURACO NEGRO
                 </div>
                 <div class="container">
                     <div class="row text-center">
-                        <div class="col bg-secondary"><b>ID PLANETA-SIST</b></div>
-                        <div class="col bg-secondary"><b>NOME PLANETA</b></div>
-                        <div class="col bg-secondary"><b>NOME SISTEMA</b></div>
+                        <div class="col bg-secondary"><b>ID BURACO NEGRO</b></div>
+                        <div class="col bg-secondary"><b>NOME ESTRELA</b></div>
                     </div>
                 </div>
-                @foreach ($planetasist as $planetasist)
+                @foreach ($buraconegro as $buraconegro)
                         <div class="container">
                             <div class="row text-center">
-                                <div class="col">{{$planetasist->id_planetasist}}</div>
-                                <div class="col">{{$planetasist->nome_planeta}}</div>
-                                <div class="col">{{$planetasist->nome_sist}}</div>
+                                <div class="col">{{$buraconegro->id_buraconegro}}</div>
+                                <div class="col">{{$buraconegro->nome_estrela}}</div>
                             </div>
                         </div>
                 @endforeach
                 <div class="text-center">
-                    <a class=" badge badge-secondary" href="{{ route('planetasist') }}">Voltar</a>
+                    <a class=" badge badge-secondary" href="{{ route('buraconegro') }}">Voltar</a>
                 </div>
             </div>
         </div>

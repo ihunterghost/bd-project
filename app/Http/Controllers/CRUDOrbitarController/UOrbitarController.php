@@ -15,9 +15,9 @@ class UOrbitarController extends Controller
       try{
         $orbitar =  DB::update('UPDATE orbitar
                 SET
-                  id_estrela = ?,
-                  id_planeta = ?,
-                  id_sn = ?
+                  estrela = ?,
+                  planeta = ?,
+                  sn = ?
                 
                 WHERE id_orbitar = ?',
                   [$request->id_estrela,
@@ -25,17 +25,17 @@ class UOrbitarController extends Controller
                   $request->id_sn,
                   $request->id_orbitar]);
         if($orbitar == 1){
-          $msg = "Orbita de id: $request->id_estrela foi modificada com sucesso.";
+          $msg = "Orbita de id: $request->id_orbitar foi modificada com sucesso.";
           $rt = "/orbitar";
           return view('result',compact('msg','rt'));
         }else{
           $msg = "Erro ao tentar modificar a Orbita.";
-          $rt = "/orbitar/create";
+          $rt = "/orbitar/update";
           return view('result',compact('msg','rt'));
         }
       }catch(Exception $e){
         $msg = "Erro ao tentar modificar a Orbita.";
-        $rt = "/orbitar/create";
+        $rt = "/orbitar/update";
         return view('result',compact('msg','rt'));
       }
       

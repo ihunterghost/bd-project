@@ -18,18 +18,18 @@
                     MODIFICAR BURACO NEGRO
                 </div>
                 <div class=" card-body">
-                    <form action="{{route('planeta.updateresponse')}}" method="post">
+                    <form action="{{route('buraconegro.updateresponse')}}" method="post">
                         @csrf
                         <p>
                             Informe o id do Buraco Negro 
                         <br>
-                            <input type="text" name="id_planeta" placeholder="informe o identificador" required="required"
+                            <input type="text" name="id_buraconegro" placeholder="informe o identificador" required="required"
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57"> 
                         </p>
                         <p class="text">
                             Id da Estrela
                         <br>
-                            <input type="text" name="estrela" placeholder="informe o identificador" required="required"
+                            <input type="text" name="id_estrela" placeholder="informe o identificador" required="required"
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </p>
                         <p class= " text-center">

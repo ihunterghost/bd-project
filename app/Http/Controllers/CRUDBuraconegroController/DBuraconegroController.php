@@ -15,7 +15,7 @@ class DBuraconegroController extends Controller
        
         try{
             
-            $buraconegro = DB::delete('DELETE FROM buraconegro WHERE id_buraconegro = ?',[$request->id_buraconegro]);
+            $buraconegro = DB::delete('DELETE FROM buraco_negro WHERE id_buraconegro = ?',[$request->id_buraconegro]);
 
             if($buraconegro == 1){
                 $msg = "Buraco Negro de id: $request->id_buraconegro foi deletado com sucesso.";

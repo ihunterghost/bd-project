@@ -21,7 +21,7 @@
                     BUSCAR BURACO NEGRO
                 </div>
                 <div class="card-body">
-                    <form action="{{route('planeta.readresponse')}}" method="get">
+                    <form action="{{route('buraconegro.readresponse')}}" method="get">
                         <p class="text">
                             Id do Buraco Negro
                         <br>

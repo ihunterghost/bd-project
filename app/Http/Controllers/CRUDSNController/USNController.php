@@ -12,14 +12,14 @@ class USnController extends Controller
     
     public function updateresponse(Request $request)
     {   
-    	
+    	echo $request->nome_sn,$request->tam_sn,$request->peso_sn,$request->comp_sn, $request->id_sn;
       try{
         $sn =  DB::update('UPDATE satelite_natural
     			    SET
     					  nome_sn = ?,
     					  tam_sn = ?,
     					  peso_sn = ?,
-                comp_sn = ?,
+                comp_sn = ?
               
     			    WHERE id_sn = ?',
     					  [$request->nome_sn,
@@ -34,13 +34,13 @@ class USnController extends Controller
           return view('result',compact('msg','rt'));
         }else{
           $msg = "Erro ao tentar modificar Satélite Natural.";
-          $rt = "/sn/create";
+          $rt = "/sn/update";
           return view('result',compact('msg','rt'));
         }
               
       }catch(Exception $e){
         $msg = "Erro ao tentar modificar Satélite Natural.";
-        $rt = "/sn/create";
+        $rt = "/sn/update";
         return view('result',compact('msg','rt'));
       }
     }

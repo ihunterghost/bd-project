@@ -20,19 +20,17 @@
                 </div>
                 <div class="container">
                     <div class="row text-center">
-                        <div class="col bg-secondary"><b>ID DA ESTRELA</b></div>
+                        <div class="col bg-secondary"><b>ID ESTRELA-SIST</b></div>
                         <div class="col bg-secondary"><b>NOME DA ESTRELA</b></div>
-                        <div class="col bg-secondary"><b>ID DO SISTEMA</b></div>
                         <div class="col bg-secondary"><b>NOME SISTEMA</b></div>
                     </div>
                 </div>
                 @foreach ($estrelasist as $estrelasist)
                         <div class="container">
                             <div class="row text-center">
-                                <div class="col">{{$estrelasist->e.id_estrela}}</div>
-                                <div class="col">{{$estrelasist->e.nome_estrela}}</div>
-                                <div class="col">{{$estrelasist->sp.id_sist}}</div>
-                                <div class="col">{{$estrelasist->sp.nome_sist}}</div>
+                                <div class="col">{{$estrelasist->id_estrelasist}}</div>
+                                <div class="col">{{$estrelasist->nome_estrela}}</div>
+                                <div class="col">{{$estrelasist->nome_sist}}</div>
                             </div>
                         </div>
                 @endforeach

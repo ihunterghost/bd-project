@@ -36,8 +36,14 @@
                         <p class="text">
                             Distância em relação à Terra
                         <br>
-                            <input type="text" name="dis_terra" placeholder="informe a distancia" required="required"
+                            <input type="text" name="dist_terra" placeholder="informe a distancia" required="required"
                             onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46">
+                        </p>
+                        <p>
+                            Quantidade de Sistemas
+                        <br>
+                            <input type="text" name="qtd_sistemas" placeholder="informe a quantidade" required="required"
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </p>
                         <p class="text-center">
                             <button type="submit" class=" badge badge-primary" name="send">Modificar</button>

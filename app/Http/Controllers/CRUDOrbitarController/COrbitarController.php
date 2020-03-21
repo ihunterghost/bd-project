@@ -13,10 +13,11 @@ class COrbitarController extends Controller
     
     public function createresponse(Request $request)
     {
+        echo $request->id_estrela,$request->id_planeta, $request->id_sn;
         try{
     	    $orbitar = DB::insert('INSERT INTO orbitar VALUES(DEFAULT,?,?,?)',
-                                    [$request->id_estrela,
-                                    $request->id_planeta,
+                                    [$request->id_planeta,
+                                    $request->id_estrela,
                                     $request->id_sn]);
             $msg = "Orbita dos corpos $request->id_estrela, $request->id_planeta,  $request->id_sn inseridos com sucesso.";
             $rt = "/orbitar";

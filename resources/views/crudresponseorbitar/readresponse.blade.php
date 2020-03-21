@@ -29,10 +29,10 @@
                 @foreach ($orbitar as $orbitar)
                         <div class="container">
                             <div class="row text-center">
-                                <div class="col">{{$orbitar->orb.id_orbitar}}</div>
-                                <div class="col">{{$orbitar->pl.nome_planeta}}</div>
-                                <div class="col">{{$orbitar->es.nome_estrela}}</div>
-                                <div class="col">{{$orbitar->sn.nome_sn}}</div>
+                                <div class="col">{{$orbitar->id_orbitar}}</div>
+                                <div class="col">{{$orbitar->nome_planeta}}</div>
+                                <div class="col">{{$orbitar->nome_estrela}}</div>
+                                <div class="col">{{$orbitar->nome_sn}}</div>
                             </div>
                         </div>
                 @endforeach

@@ -14,7 +14,7 @@ class REstrelaSistController extends Controller
     {
     	$estrelasist = DB::select('SELECT   es.id_estrelasist,
                                             e.nome_estrela,
-                                            sp.nome_sist,
+                                            sp.nome_sist
                                             
                                 FROM   estrela_sist es JOIN sist_planetario sp
                                     ON (es.sist_planetario = sp.id_sist) 

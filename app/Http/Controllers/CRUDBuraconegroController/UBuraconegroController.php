@@ -13,25 +13,30 @@ class UBuraconegroController extends Controller
     public function updateresponse(Request $request)
     {   
       try{
-        $buraconegro =  DB::update('UPDATE buraconegro
-                SET
-                  estrela = ?
-                
-                WHERE id_buraconegro = ?',
-                  [$request->estrela,
-                  $request->id_buraconegro]);
-        if($buraconegro == 1){
-          $msg = "Buraco Negro de id: $request->id_buraconegro foi modificado com sucesso.";
-          $rt = "/buraconegro";
-          return view('result',compact('msg','rt'));
-        }else{
-          $msg = "Erro ao tentar modificar o Buraco Negro.";
-          $rt = "/buraconegro/create";
-          return view('result',compact('msg','rt'));
+        $estrela = DB::select("SELECT morte FROM estrela WHERE id_estrela = ? and morte = 'true'",[$request->id_estrela]);
+        echo sizeof($estrela);
+        if(sizeof($estrela)>0){
+          $buraconegro =  DB::update('UPDATE buraco_negro
+                  SET
+                    estrela = ?
+                  
+                  WHERE id_buraconegro = ?',
+                    [$request->id_estrela,
+                    $request->id_buraconegro]);
+  
+          if($buraconegro == 1){
+            $msg = "Buraco Negro de id: $request->id_buraconegro foi modificado com sucesso.";
+            $rt = "/buraconegro";
+            return view('result',compact('msg','rt'));
+          }else{
+            $msg = "Erro ao tentar modificar o Buraco Negro.";
+            $rt = "/buraconegro/update";
+            return view('result',compact('msg','rt'));
+          }
         }
       }catch(Exception $e){
-        $msg = "Erro ao tentar modificar o Buraco Negro.";
-        $rt = "/buraconegro/create";
+        $msg = "Error grave";
+        $rt = "/buraconegro/update";
         return view('result',compact('msg','rt'));
       }
       
