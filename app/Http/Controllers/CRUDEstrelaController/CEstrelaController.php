@@ -15,7 +15,7 @@ class CEstrelaController extends Controller
     {
 
         try{
-            echo($request->tipo);
+            
             if(strcasecmp($request->tipo,"Anã Vermelha") == 0){
                 $request->tipo = 1;
             }else{
