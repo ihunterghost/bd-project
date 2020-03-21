@@ -13,43 +13,46 @@ class CEstrelaController extends Controller
     
     public function createresponse(Request $request)
     {
-
+        
         try{
-            
-            if(strcasecmp($request->tipo,"Anã Vermelha") == 0){
-                $request->tipo = 1;
+            $butaoradiotipo = $_POST['tipo'];
+            if(strcasecmp($butaoradiotipo,"Anã Vermelha") == 0){
+                $butaoradiotipo = 1;
             }else{
-                if(strcasecmp($request->tipo,"Anã Branca") == 0){
-                    $request->tipo = 2;
+                if(strcasecmp($butaoradiotipo,"Anã Branca") == 0){
+                    $butaoradiotipo = 2;
                 }else{
-                    if(strcasecmp($request->tipo,"Estrela Binária") == 0){
-                        $request->tipo = 3;
+                    if(strcasecmp($butaoradiotipo,"Estrela Binária") == 0){
+                        $butaoradiotipo = 3;
                     }else{
-                        if(strcasecmp($request->tipo,"Gigante Azul") == 0){
-                            $request->tipo = 4;
+                        if(strcasecmp($butaoradiotipo,"Gigante Azul") == 0){
+                            $butaoradiotipo = 4;
                         }else{
-                            if(strcasecmp($request->tipo,"Gigante Vermelho") == 0){
-                                $request->tipo = 5;
+                            if(strcasecmp($butaoradiotipo,"Gigante Vermelho") == 0){
+                                $butaoradiotipo = 5;
                             }
                         }
                     }
                 }
             }
-            if(strcasecmp($request->morreu,"Sim") == 0){
-                $request->morreu = 'true';
+            $butaoradiomorte = $_POST['morte'];
+            if(strcasecmp($butaoradiomorte,"Sim") == 0){
+                $butaoradiomorte = 'true';
             }else{
-                if(strcasecmp($request->morreu,"Não") == 0){
-                    $request->morreu = 'false';
+                if(strcasecmp($butaoradiomorte,"Não") == 0){
+                    $butaoradiomorte = 'false';
                 }
             }
+
+            
     	    $estrela = DB::insert('INSERT INTO estrela VALUES(DEFAULT,?,?,?,?,?,?,?)',
     							[$request->nome_estrela,
     							$request->tam_estrela,
     							$request->idade_estrela,
     							'false',
     							$request->dist_terra_estrela,
-                                $request->tipo,
-                                $request->morreu]);
+                                $butaoradiotipo,
+                                $butaoradiomorte]);
             $msg = "Estrela de nome $request->nome_estrela foi inserida com sucesso.";
             $rt = "/estrela";
             return view('result',compact('msg','rt'));

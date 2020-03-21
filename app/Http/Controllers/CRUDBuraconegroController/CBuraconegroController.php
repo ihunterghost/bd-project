@@ -14,7 +14,7 @@ class CBuraconegroController extends Controller
     public function createresponse(Request $request)
     {
         try{
-            $estrela = DB::select("SELECT morte FROM estrela WHERE id_estrela = ? and morte = 'true'",[$request->id_estrela]);
+            $estrela = DB::select("SELECT morte FROM estrela WHERE id_estrela = ? and morte = 'true' and tipo = 5",[$request->id_estrela]);
             
             if(sizeof($estrela)>0){
     	        $buraconegro = DB::insert('INSERT INTO buraco_negro VALUES(DEFAULT,?)',
@@ -24,7 +24,7 @@ class CBuraconegroController extends Controller
                 $rt = "/buraconegro";
                 return view('result',compact('msg','rt'));
             }else{
-                $msg = "Estrela não está morta";
+                $msg = "Estrela não está morta ou não é uma gigante vermelha";
                 $rt = "/buraconegro/create";
                 return view('result',compact('msg','rt'));
             }
