@@ -44,7 +44,11 @@ class CEstrelaController extends Controller
                 }
             }
 
-            
+            if(strcasecmp($butaoradiomorte,"true") == 0 && $butaoradiotipo<5){
+                $msg = "Estrela so pode ser cadastrada como morta se for Gigante Vermelha";
+                $rt = "/estrela/create";
+                return view('result',compact('msg','rt'));
+            }
     	    $estrela = DB::insert('INSERT INTO estrela VALUES(DEFAULT,?,?,?,?,?,?,?)',
     							[$request->nome_estrela,
     							$request->tam_estrela,
