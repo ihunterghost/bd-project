@@ -24,7 +24,7 @@ class CBuraconegroController extends Controller
                 $rt = "/buraconegro";
                 return view('result',compact('msg','rt'));
             }else{
-                $msg = "Estrela não está morta ou não é uma gigante vermelha";
+                $msg = "Estrela não está morta ou não é uma gigante vermelha.";
                 $rt = "/buraconegro/create";
                 return view('result',compact('msg','rt'));
             }

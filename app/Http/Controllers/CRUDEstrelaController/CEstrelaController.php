@@ -28,7 +28,7 @@ class CEstrelaController extends Controller
                         if(strcasecmp($butaoradiotipo,"Gigante Azul") == 0){
                             $butaoradiotipo = 4;
                         }else{
-                            if(strcasecmp($butaoradiotipo,"Gigante Vermelho") == 0){
+                            if(strcasecmp($butaoradiotipo,"Gigante Vermelha") == 0){
                                 $butaoradiotipo = 5;
                             }
                         }

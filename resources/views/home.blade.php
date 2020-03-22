@@ -16,6 +16,9 @@
 
                     Você está logado!
                 </div>
+		<div class= "text-center">
+       			<a class =" badge badge-secondary" href="{{route('welcome') }}" class = "btn btn-primary">Voltar</a>
+    		</div>
             </div>
         </div>
     </div>

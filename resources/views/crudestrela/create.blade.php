@@ -56,7 +56,7 @@
                             <input type="radio" id="ga" name="tipo" value="Gigante Azul">
                             <label for="ga">Gigante Azul</label>
                             <input type="radio" id="gv" name="tipo" value="Gigante Vermelho">
-                            <label for="gv">Gigante Vermelho</label>
+                            <label for="gv">Gigante Vermelha</label>
                         </p>
 			            <p>
                             Morreu?

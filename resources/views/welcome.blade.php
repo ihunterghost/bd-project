@@ -23,7 +23,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header text-center">
-                    CENTRO DE COSMOLOGIA ESPACIAL
+                    CENTRO DE COSMOLOGIA MUNDIAL
                 </div>
                 <div class="card-body text-center" style="font-size: 17px;">
                     <a class="badge badge-primary" href="{{ route('planeta') }}">Planeta</a>
