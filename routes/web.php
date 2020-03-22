@@ -58,112 +58,112 @@ Route::get('/buraconegro', function (){
 })->name('relacoes');
 
 //Rotas com controller, mas apenas usa view
-Route::get('/planeta/create', 'CRUDPlanetaController\CPlanetaController@create')->name('planeta.create');
-Route::get('/planeta/read', 'CRUDPlanetaController\RPlanetaController@read')->name('planeta.read');
-Route::get('/planeta/update', 'CRUDPlanetaController\UPlanetaController@update')->name('planeta.update');
-Route::get('/planeta/delete', 'CRUDPlanetaController\DPlanetaController@delete')->name('planeta.delete');
+Route::get('/planeta/create', 'CRUDPlanetaController\CPlanetaController@create')->name('planeta.create')->middleware('auth');
+Route::get('/planeta/read', 'CRUDPlanetaController\RPlanetaController@read')->name('planeta.read')->middleware('auth');
+Route::get('/planeta/update', 'CRUDPlanetaController\UPlanetaController@update')->name('planeta.update')->middleware('auth');
+Route::get('/planeta/delete', 'CRUDPlanetaController\DPlanetaController@delete')->name('planeta.delete')->middleware('auth');
 
 //Rotas com uso total do controller (back-end)
-Route::post('/planeta/create/createresponse','CRUDPlanetaController\CPlanetaController@createresponse') ->name('planeta.createresponse');
-Route::get('/planeta/read/readresponse','CRUDPlanetaController\RPlanetaController@readresponse')->name('planeta.readresponse');
-Route::post('/planeta/update/updateresponse','CRUDPlanetaController\UPlanetaController@updateresponse')->name('planeta.updateresponse');
-Route::post('/planeta/delete/deleteresponse','CRUDPlanetaController\DPlanetaController@deleteresponse')->name('planeta.deleteresponse');
+Route::post('/planeta/create/createresponse','CRUDPlanetaController\CPlanetaController@createresponse') ->name('planeta.createresponse')->middleware('auth');
+Route::get('/planeta/read/readresponse','CRUDPlanetaController\RPlanetaController@readresponse')->name('planeta.readresponse')->middleware('auth');
+Route::post('/planeta/update/updateresponse','CRUDPlanetaController\UPlanetaController@updateresponse')->name('planeta.updateresponse')->middleware('auth');
+Route::post('/planeta/delete/deleteresponse','CRUDPlanetaController\DPlanetaController@deleteresponse')->name('planeta.deleteresponse')->middleware('auth');
 
 //Rotas com controller, mas apenas usa view
-Route::get('/estrela/create', 'CRUDEstrelaController\CEstrelaController@create')->name('estrela.create');
-Route::get('/estrela/read', 'CRUDEstrelaController\REstrelaController@read')->name('estrela.read');
-Route::get('/estrela/update', 'CRUDEstrelaController\UEstrelaController@update')->name('estrela.update');
-Route::get('/estrela/delete', 'CRUDEstrelaController\DEstrelaController@delete')->name('estrela.delete');
+Route::get('/estrela/create', 'CRUDEstrelaController\CEstrelaController@create')->name('estrela.create')->middleware('auth');
+Route::get('/estrela/read', 'CRUDEstrelaController\REstrelaController@read')->name('estrela.read')->middleware('auth');
+Route::get('/estrela/update', 'CRUDEstrelaController\UEstrelaController@update')->name('estrela.update')->middleware('auth');
+Route::get('/estrela/delete', 'CRUDEstrelaController\DEstrelaController@delete')->name('estrela.delete')->middleware('auth');
 
 //Rotas com uso total do controller (back-end)
-Route::post('/estrela/create/createresponse','CRUDEstrelaController\CEstrelaController@createresponse') ->name('estrela.createresponse');
-Route::get('/estrela/read/readresponse','CRUDEstrelaController\REstrelaController@readresponse')->name('estrela.readresponse');
-Route::post('/estrela/update/updateresponse','CRUDEstrelaController\UEstrelaController@updateresponse')->name('estrela.updateresponse');
-Route::post('/estrela/delete/deleteresponse','CRUDEstrelaController\DEstrelaController@deleteresponse')->name('estrela.deleteresponse');
+Route::post('/estrela/create/createresponse','CRUDEstrelaController\CEstrelaController@createresponse') ->name('estrela.createresponse')->middleware('auth');
+Route::get('/estrela/read/readresponse','CRUDEstrelaController\REstrelaController@readresponse')->name('estrela.readresponse')->middleware('auth');
+Route::post('/estrela/update/updateresponse','CRUDEstrelaController\UEstrelaController@updateresponse')->name('estrela.updateresponse')->middleware('auth');
+Route::post('/estrela/delete/deleteresponse','CRUDEstrelaController\DEstrelaController@deleteresponse')->name('estrela.deleteresponse')->middleware('auth');
 
 //Rotas com controller, mas apenas usa view
-Route::get('/galaxia/create', 'CRUDGalaxiaController\CGalaxiaController@create')->name('galaxia.create');
-Route::get('/galaxia/read', 'CRUDGalaxiaController\RGalaxiaController@read')->name('galaxia.read');
-Route::get('/galaxia/update', 'CRUDGalaxiaController\UGalaxiaController@update')->name('galaxia.update');
-Route::get('/galaxia/delete', 'CRUDGalaxiaController\DGalaxiaController@delete')->name('galaxia.delete');
+Route::get('/galaxia/create', 'CRUDGalaxiaController\CGalaxiaController@create')->name('galaxia.create')->middleware('auth');
+Route::get('/galaxia/read', 'CRUDGalaxiaController\RGalaxiaController@read')->name('galaxia.read')->middleware('auth');
+Route::get('/galaxia/update', 'CRUDGalaxiaController\UGalaxiaController@update')->name('galaxia.update')->middleware('auth');
+Route::get('/galaxia/delete', 'CRUDGalaxiaController\DGalaxiaController@delete')->name('galaxia.delete')->middleware('auth');
 
 //Rotas com uso total do controller (back-end)
-Route::post('/galaxia/create/createresponse','CRUDGalaxiaController\CGalaxiaController@createresponse') ->name('galaxia.createresponse');
-Route::get('/galaxia/read/readresponse','CRUDGalaxiaController\RGalaxiaController@readresponse')->name('galaxia.readresponse');
-Route::post('/galaxia/update/updateresponse','CRUDGalaxiaController\UGalaxiaController@updateresponse')->name('galaxia.updateresponse');
-Route::post('/galaxia/delete/deleteresponse','CRUDGalaxiaController\DGalaxiaController@deleteresponse')->name('galaxia.deleteresponse');
+Route::post('/galaxia/create/createresponse','CRUDGalaxiaController\CGalaxiaController@createresponse') ->name('galaxia.createresponse')->middleware('auth');
+Route::get('/galaxia/read/readresponse','CRUDGalaxiaController\RGalaxiaController@readresponse')->name('galaxia.readresponse')->middleware('auth');
+Route::post('/galaxia/update/updateresponse','CRUDGalaxiaController\UGalaxiaController@updateresponse')->name('galaxia.updateresponse')->middleware('auth');
+Route::post('/galaxia/delete/deleteresponse','CRUDGalaxiaController\DGalaxiaController@deleteresponse')->name('galaxia.deleteresponse')->middleware('auth');
 
 //Rotas com controller, mas apenas usa view
-Route::get('/sist/create', 'CRUDSistController\CSistController@create')->name('sist.create');
-Route::get('/sist/read', 'CRUDSistController\RSistController@read')->name('sist.read');
-Route::get('/sist/update', 'CRUDSistController\USistController@update')->name('sist.update');
-Route::get('/sist/delete', 'CRUDSistController\DSistController@delete')->name('sist.delete');
+Route::get('/sist/create', 'CRUDSistController\CSistController@create')->name('sist.create')->middleware('auth');
+Route::get('/sist/read', 'CRUDSistController\RSistController@read')->name('sist.read')->middleware('auth');
+Route::get('/sist/update', 'CRUDSistController\USistController@update')->name('sist.update')->middleware('auth');
+Route::get('/sist/delete', 'CRUDSistController\DSistController@delete')->name('sist.delete')->middleware('auth');
 
 //Rotas com uso total do controller (back-end)
-Route::post('/sist/create/createresponse','CRUDSistController\CSistController@createresponse') ->name('sist.createresponse');
-Route::get('/sist/read/readresponse','CRUDSistController\RSistController@readresponse')->name('sist.readresponse');
-Route::post('/sist/update/updateresponse','CRUDSistController\USistController@updateresponse')->name('sist.updateresponse');
-Route::post('/sist/delete/deleteresponse','CRUDSistController\DSistController@deleteresponse')->name('sist.deleteresponse');
+Route::post('/sist/create/createresponse','CRUDSistController\CSistController@createresponse') ->name('sist.createresponse')->middleware('auth');
+Route::get('/sist/read/readresponse','CRUDSistController\RSistController@readresponse')->name('sist.readresponse')->middleware('auth');
+Route::post('/sist/update/updateresponse','CRUDSistController\USistController@updateresponse')->name('sist.updateresponse')->middleware('auth');
+Route::post('/sist/delete/deleteresponse','CRUDSistController\DSistController@deleteresponse')->name('sist.deleteresponse')->middleware('auth');
 
 //Rotas com controller, mas apenas usa view
-Route::get('/sn/create', 'CRUDSnController\CSnController@create')->name('sn.create');
-Route::get('/sn/read', 'CRUDSnController\RSnController@read')->name('sn.read');
-Route::get('/sn/update', 'CRUDSnController\USnController@update')->name('sn.update');
-Route::get('/sn/delete', 'CRUDSnController\DSnController@delete')->name('sn.delete');
+Route::get('/sn/create', 'CRUDSnController\CSnController@create')->name('sn.create')->middleware('auth');
+Route::get('/sn/read', 'CRUDSnController\RSnController@read')->name('sn.read')->middleware('auth');
+Route::get('/sn/update', 'CRUDSnController\USnController@update')->name('sn.update')->middleware('auth');
+Route::get('/sn/delete', 'CRUDSnController\DSnController@delete')->name('sn.delete')->middleware('auth');
 
 //Rotas com uso total do controller (back-end)
-Route::post('/sn/create/createresponse','CRUDSnController\CSnController@createresponse') ->name('sn.createresponse');
-Route::get('/sn/read/readresponse','CRUDSnController\RSnController@readresponse')->name('sn.readresponse');
-Route::post('/sn/update/updateresponse','CRUDSnController\USnController@updateresponse')->name('sn.updateresponse');
-Route::post('/sn/delete/deleteresponse','CRUDSnController\DSnController@deleteresponse')->name('sn.deleteresponse');
+Route::post('/sn/create/createresponse','CRUDSnController\CSnController@createresponse') ->name('sn.createresponse')->middleware('auth');
+Route::get('/sn/read/readresponse','CRUDSnController\RSnController@readresponse')->name('sn.readresponse')->middleware('auth');
+Route::post('/sn/update/updateresponse','CRUDSnController\USnController@updateresponse')->name('sn.updateresponse')->middleware('auth');
+Route::post('/sn/delete/deleteresponse','CRUDSnController\DSnController@deleteresponse')->name('sn.deleteresponse')->middleware('auth');
 
 //Rotas com controller, mas apenas usa view
-Route::get('/planetasist/create', 'CRUDPlanetaSistController\CPlanetaSistController@create')->name('planetasist.create');
-Route::get('/planetasist/read', 'CRUDPlanetaSistController\RPlanetaSistController@read')->name('planetasist.read');
-Route::get('/planetasist/update', 'CRUDPlanetaSistController\UPlanetaSistController@update')->name('planetasist.update');
-Route::get('/planetasist/delete', 'CRUDPlanetaSistController\DPlanetaSistController@delete')->name('planetasist.delete');
+Route::get('/planetasist/create', 'CRUDPlanetaSistController\CPlanetaSistController@create')->name('planetasist.create')->middleware('auth');
+Route::get('/planetasist/read', 'CRUDPlanetaSistController\RPlanetaSistController@read')->name('planetasist.read')->middleware('auth');
+Route::get('/planetasist/update', 'CRUDPlanetaSistController\UPlanetaSistController@update')->name('planetasist.update')->middleware('auth');
+Route::get('/planetasist/delete', 'CRUDPlanetaSistController\DPlanetaSistController@delete')->name('planetasist.delete')->middleware('auth');
 
 //Rotas com uso total do controller (back-end)
-Route::post('/planetasist/create/createresponse','CRUDPlanetaSistController\CPlanetaSistController@createresponse') ->name('planetasist.createresponse');
-Route::get('/planetasist/read/readresponse','CRUDPlanetaSistController\RPlanetaSistController@readresponse')->name('planetasist.readresponse');
-Route::post('/planetasist/update/updateresponse','CRUDPlanetaSistController\UPlanetaSistController@updateresponse')->name('planetasist.updateresponse');
-Route::post('/planetasist/delete/deleteresponse','CRUDPlanetaSistController\DPlanetaSistController@deleteresponse')->name('planetasist.deleteresponse');
+Route::post('/planetasist/create/createresponse','CRUDPlanetaSistController\CPlanetaSistController@createresponse') ->name('planetasist.createresponse')->middleware('auth');
+Route::get('/planetasist/read/readresponse','CRUDPlanetaSistController\RPlanetaSistController@readresponse')->name('planetasist.readresponse')->middleware('auth');
+Route::post('/planetasist/update/updateresponse','CRUDPlanetaSistController\UPlanetaSistController@updateresponse')->name('planetasist.updateresponse')->middleware('auth');
+Route::post('/planetasist/delete/deleteresponse','CRUDPlanetaSistController\DPlanetaSistController@deleteresponse')->name('planetasist.deleteresponse')->middleware('auth');
 
 //Rotas com controller, mas apenas usa view
-Route::get('/estrelasist/create', 'CRUDEstrelaSistController\CEstrelaSistController@create')->name('estrelasist.create');
-Route::get('/estrelasist/read', 'CRUDEstrelaSistController\REstrelaSistController@read')->name('estrelasist.read');
-Route::get('/estrelasist/update', 'CRUDEstrelaSistController\UEstrelaSistController@update')->name('estrelasist.update');
-Route::get('/estrelasist/delete', 'CRUDEstrelaSistController\DEstrelaSistController@delete')->name('estrelasist.delete');
+Route::get('/estrelasist/create', 'CRUDEstrelaSistController\CEstrelaSistController@create')->name('estrelasist.create')->middleware('auth');
+Route::get('/estrelasist/read', 'CRUDEstrelaSistController\REstrelaSistController@read')->name('estrelasist.read')->middleware('auth');
+Route::get('/estrelasist/update', 'CRUDEstrelaSistController\UEstrelaSistController@update')->name('estrelasist.update')->middleware('auth');
+Route::get('/estrelasist/delete', 'CRUDEstrelaSistController\DEstrelaSistController@delete')->name('estrelasist.delete')->middleware('auth');
 
 //Rotas com uso total do controller (back-end)
-Route::post('/estrelasist/create/createresponse','CRUDEstrelaSistController\CEstrelaSistController@createresponse') ->name('estrelasist.createresponse');
-Route::get('/estrelasist/read/readresponse','CRUDEstrelaSistController\REstrelaSistController@readresponse')->name('estrelasist.readresponse');
-Route::post('/estrelasist/update/updateresponse','CRUDEstrelaSistController\UEstrelaSistController@updateresponse')->name('estrelasist.updateresponse');
-Route::post('/estrelasist/delete/deleteresponse','CRUDEstrelaSistController\DEstrelaSistController@deleteresponse')->name('estrelasist.deleteresponse');
+Route::post('/estrelasist/create/createresponse','CRUDEstrelaSistController\CEstrelaSistController@createresponse') ->name('estrelasist.createresponse')->middleware('auth');
+Route::get('/estrelasist/read/readresponse','CRUDEstrelaSistController\REstrelaSistController@readresponse')->name('estrelasist.readresponse')->middleware('auth');
+Route::post('/estrelasist/update/updateresponse','CRUDEstrelaSistController\UEstrelaSistController@updateresponse')->name('estrelasist.updateresponse')->middleware('auth');
+Route::post('/estrelasist/delete/deleteresponse','CRUDEstrelaSistController\DEstrelaSistController@deleteresponse')->name('estrelasist.deleteresponse')->middleware('auth');
 
 //Rotas com controller, mas apenas usa view
-Route::get('/orbitar/create', 'CRUDOrbitarController\COrbitarController@create')->name('orbitar.create');
-Route::get('/orbitar/read', 'CRUDOrbitarController\ROrbitarController@read')->name('orbitar.read');
-Route::get('/orbitar/update', 'CRUDOrbitarController\UOrbitarController@update')->name('orbitar.update');
-Route::get('/orbitar/delete', 'CRUDOrbitarController\DOrbitarController@delete')->name('orbitar.delete');
+Route::get('/orbitar/create', 'CRUDOrbitarController\COrbitarController@create')->name('orbitar.create')->middleware('auth');
+Route::get('/orbitar/read', 'CRUDOrbitarController\ROrbitarController@read')->name('orbitar.read')->middleware('auth');
+Route::get('/orbitar/update', 'CRUDOrbitarController\UOrbitarController@update')->name('orbitar.update')->middleware('auth');
+Route::get('/orbitar/delete', 'CRUDOrbitarController\DOrbitarController@delete')->name('orbitar.delete')->middleware('auth');
 
 //Rotas com uso total do controller (back-end)
-Route::post('/orbitar/create/createresponse','CRUDOrbitarController\COrbitarController@createresponse') ->name('orbitar.createresponse');
-Route::get('/orbitar/read/readresponse','CRUDOrbitarController\ROrbitarController@readresponse')->name('orbitar.readresponse');
-Route::post('/orbitar/update/updateresponse','CRUDOrbitarController\UOrbitarController@updateresponse')->name('orbitar.updateresponse');
-Route::post('/orbitar/delete/deleteresponse','CRUDOrbitarController\DOrbitarController@deleteresponse')->name('orbitar.deleteresponse');
+Route::post('/orbitar/create/createresponse','CRUDOrbitarController\COrbitarController@createresponse') ->name('orbitar.createresponse')->middleware('auth');
+Route::get('/orbitar/read/readresponse','CRUDOrbitarController\ROrbitarController@readresponse')->name('orbitar.readresponse')->middleware('auth');
+Route::post('/orbitar/update/updateresponse','CRUDOrbitarController\UOrbitarController@updateresponse')->name('orbitar.updateresponse')->middleware('auth');
+Route::post('/orbitar/delete/deleteresponse','CRUDOrbitarController\DOrbitarController@deleteresponse')->name('orbitar.deleteresponse')->middleware('auth');
 
 //Rotas com controller, mas apenas usa view
-Route::get('/buraconegro/create', 'CRUDBuraconegroController\CBuraconegroController@create')->name('buraconegro.create');
-Route::get('/buraconegro/read', 'CRUDBuraconegroController\RBuraconegroController@read')->name('buraconegro.read');
-Route::get('/buraconegro/update', 'CRUDBuraconegroController\UBuraconegroController@update')->name('buraconegro.update');
-Route::get('/buraconegro/delete', 'CRUDBuraconegroController\DBuraconegroController@delete')->name('buraconegro.delete');
+Route::get('/buraconegro/create', 'CRUDBuraconegroController\CBuraconegroController@create')->name('buraconegro.create')->middleware('auth');
+Route::get('/buraconegro/read', 'CRUDBuraconegroController\RBuraconegroController@read')->name('buraconegro.read')->middleware('auth');
+Route::get('/buraconegro/update', 'CRUDBuraconegroController\UBuraconegroController@update')->name('buraconegro.update')->middleware('auth');
+Route::get('/buraconegro/delete', 'CRUDBuraconegroController\DBuraconegroController@delete')->name('buraconegro.delete')->middleware('auth');
 
 //Rotas com uso total do controller (back-end)
-Route::post('/buraconegro/create/createresponse','CRUDBuraconegroController\CBuraconegroController@createresponse') ->name('buraconegro.createresponse');
-Route::get('/buraconegro/read/readresponse','CRUDBuraconegroController\RBuraconegroController@readresponse')->name('buraconegro.readresponse');
-Route::post('/buraconegro/update/updateresponse','CRUDBuraconegroController\UBuraconegroController@updateresponse')->name('buraconegro.updateresponse');
-Route::post('/buraconegro/delete/deleteresponse','CRUDBuraconegroController\DBuraconegroController@deleteresponse')->name('buraconegro.deleteresponse');
+Route::post('/buraconegro/create/createresponse','CRUDBuraconegroController\CBuraconegroController@createresponse') ->name('buraconegro.createresponse')->middleware('auth');
+Route::get('/buraconegro/read/readresponse','CRUDBuraconegroController\RBuraconegroController@readresponse')->name('buraconegro.readresponse')->middleware('auth');
+Route::post('/buraconegro/update/updateresponse','CRUDBuraconegroController\UBuraconegroController@updateresponse')->name('buraconegro.updateresponse')->middleware('auth');
+Route::post('/buraconegro/delete/deleteresponse','CRUDBuraconegroController\DBuraconegroController@deleteresponse')->name('buraconegro.deleteresponse')->middleware('auth');
 
 
 //Auth::routes();
