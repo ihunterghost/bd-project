@@ -14,7 +14,24 @@ class UPlanetaSistController extends Controller
     {
       
      try{
-          
+        $resultselect = DB::SELECT('SELECT planeta
+                                    FROM planeta_sist
+                                    WHERE id_planetasist = ? ',
+                                    [$request->id_planetasist]);
+
+        if($resultselect[0]->planeta != $request->planeta){
+            $sist= DB::select('SELECT qtd_planetas 
+                                   FROM sist_planetario 
+                                   WHERE id_sist = ?',[$request->sist_planetario]);
+            $sist[0]->qtd_planetas = $sist[0]->qtd_planetas + 1;
+            $qnt = $sist[0]->qtd_planetas;
+
+            $sistupdate =  DB::update('UPDATE sist_planetario
+    			    SET qtd_planetas = ?
+    			    WHERE id_sist = ?',
+                [$qnt,
+                $request->sist_planetario]);
+        }                     
         $planetasist =  DB::update('UPDATE planeta_sist
                                     SET
                                       planeta = ?,
