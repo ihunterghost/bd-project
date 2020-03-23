@@ -33,9 +33,9 @@
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </p>
                         <p>
-                            Galáxia
+                            Id da Galáxia
                         <br>
-                            <input type="text" name="galaxia" placeholder="informe a galaxia" required="required"
+                            <input type="text" name="galaxia" placeholder="informe o identificador" required="required"
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </p>
                         <p class="text-center">

@@ -25,12 +25,12 @@
                         <p class="text">
                             Id Planeta
                         <br>
-                            <input type="text" name="planeta" placeholder="informe o ID" required="required"> 
+                            <input type="text" name="planeta" placeholder="informe o identificador" required="required"> 
                         </p>
                         <p class="text">
                             Id Sistema Planetário
                         <br>
-                            <input type="text" name="sist_planetario" placeholder="informe ID" required="required"
+                            <input type="text" name="sist_planetario" placeholder="informe o identificador" required="required"
                             onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46">
                         </p>
                         <p class="text-center">

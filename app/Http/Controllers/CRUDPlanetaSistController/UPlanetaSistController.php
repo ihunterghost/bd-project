@@ -42,7 +42,7 @@ class UPlanetaSistController extends Controller
                                     $request->sist_planetario,
                                     $request->id_planetasist]);
         if($planetasist == 1){
-          $msg = "planetasist de id: $request->id_planetasist modificada com sucesso";
+          $msg = "Planeta-Sist de id: $request->id_planetasist modificado com sucesso.";
           $rt = "/planetasist";
           return view('result',compact('msg','rt'));
         }else{

@@ -12,7 +12,6 @@ class USnController extends Controller
     
     public function updateresponse(Request $request)
     {   
-    	echo $request->nome_sn,$request->tam_sn,$request->peso_sn,$request->comp_sn, $request->id_sn;
       try{
         $sn =  DB::update('UPDATE satelite_natural
     			    SET

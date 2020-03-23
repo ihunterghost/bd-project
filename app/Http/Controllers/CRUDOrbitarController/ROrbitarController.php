@@ -16,9 +16,9 @@ class ROrbitarController extends Controller
                                 pl.nome_planeta,
                                 es.nome_estrela,
                                 sn.nome_sn
-                            FROM orbitar orb JOIN planeta pl ON
-                                orb.planeta = pl.id_planeta JOIN
-                                estrela es ON orb.estrela = es.id_estrela join
+                            FROM orbitar orb FULL JOIN planeta pl ON
+                                orb.planeta = pl.id_planeta FULL JOIN
+                                estrela es ON orb.estrela = es.id_estrela FULL join
                                 satelite_natural sn ON orb.sn  = sn.id_sn
                             WHERE id_orbitar = ?',
                         

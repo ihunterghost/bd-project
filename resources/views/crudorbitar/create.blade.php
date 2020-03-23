@@ -24,19 +24,19 @@
                         <p>
                             Id da Estrela
                         <br>
-                            <input type="text" name="id_estrela" placeholder="informe o identificador" required="required"
+                            <input type="text" name="id_estrela" placeholder="informe o identificador" 
                             onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46">
                         </p>
                         <p>
                             Id do Planeta
                         <br>
-                            <input type="text" name="id_planeta" placeholder="Informe o identificador" required="required"
+                            <input type="text" name="id_planeta" placeholder="Informe o identificador" 
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </p>
                         <p>
                             Id do Satélite Natural
                         <br>
-                            <input type="text" name="id_sn" placeholder="informe o identificador" required="required"
+                            <input type="text" name="id_sn" placeholder="informe o identificador" 
                             onkeypress="return event.charCode >= 48 && event.charCode <= 57">
                         </p>
                         

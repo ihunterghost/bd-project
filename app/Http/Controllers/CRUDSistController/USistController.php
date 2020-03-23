@@ -12,7 +12,6 @@ class USistController extends Controller
     
     public function updateresponse(Request $request)
     {   
-    	echo $request->nome_sist,  $request->idade_sist,$request->id_sist;
       try{
         $sist =  DB::update('UPDATE sist_planetario
     			    SET nome_sist = ?,

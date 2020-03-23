@@ -17,6 +17,8 @@ class CSistController extends Controller
         try{
     	    $sist = DB::insert('INSERT INTO sist_planetario VALUES(DEFAULT,?,?,?,?,?)',
                                 [$request->nome_sist,
+                                0,
+                                0,
     							$request->idade_sist,
     							$request->galaxia]);
             $msg = "Sistema Planetário de nome $request->nome_sist foi inserido com sucesso.";
