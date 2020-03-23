@@ -13,10 +13,12 @@ class RPlanetaController extends Controller
     {
         $planeta = DB::select('SELECT * FROM planeta WHERE nome_planeta = ?',[$request->nome_planeta]);
        
-        if(strcasecmp($planeta[0]->possui_sn_planeta,'1') == 0){
-            $planeta[0]->possui_sn_planeta='Sim';
-        }else{
-            $planeta[0]->possui_sn_planeta='Não';
+        if(sizeof($planeta) > 0){
+            if(strcasecmp($planeta[0]->possui_sn_planeta,'1') == 0){
+                $planeta[0]->possui_sn_planeta='Sim';
+            }else{
+                $planeta[0]->possui_sn_planeta='Não';
+            }
         }
         return view('crudresponseplaneta/readresponse',compact('planeta'));
     }
