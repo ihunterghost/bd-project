@@ -16,7 +16,7 @@ class DPlanetaController extends Controller
             $planeta = DB::delete('DELETE FROM planeta WHERE id_planeta = ?',[$request->id_planeta]);
 
             if($planeta == 1){
-                $msg = "Planeta de id: $request->id_estrela foi deletado com sucesso.";
+                $msg = "Planeta de id: $request->id_planeta foi deletado com sucesso.";
                 $rt = "/planeta";
                 return view('result',compact('msg','rt'));
             }else{

@@ -12,7 +12,7 @@ class RGalaxiaController extends Controller
 {
     public function readresponse(Request $request)
     {
-    	$galaxia = DB::select('SELECT * FROM galaxia WHERE nome_galaxia = ?',[$request->nome_galaxia]);
+    	$galaxia = DB::select('SELECT * FROM galaxia WHERE UPPER(nome_galaxia) = UPPER(?)',[$request->nome_galaxia]);
         return view('crudresponsegalaxia/readresponse',compact('galaxia'));
     }
 

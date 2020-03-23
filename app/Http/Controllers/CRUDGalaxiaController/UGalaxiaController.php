@@ -17,17 +17,15 @@ class UGalaxiaController extends Controller
         
         $galaxia =  DB::update('UPDATE galaxia
                 SET dist_terra = ?,
-                nome_galaxia = ?,
-                qtd_sistemas = ?
+                nome_galaxia = ?
                 WHERE id_galaxia = ?',
                 [$request->dist_terra,
                 $request->nome_galaxia,
-                $request->qtd_sistemas,
                 $request->id_galaxia
                ]);
                 
         if($galaxia == 1){
-          $msg = "Galaxia de id: $request->id_galaxia foi modificada com sucesso";
+          $msg = "Galáxia de id: $request->id_galaxia foi modificada com sucesso.";
           $rt = "/galaxia";
           return view('result',compact('msg','rt'));
         }else{

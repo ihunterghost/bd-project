@@ -14,7 +14,6 @@ class UBuraconegroController extends Controller
     {   
       try{
         $estrela = DB::select("SELECT morte FROM estrela WHERE id_estrela = ? and morte = 'true'",[$request->id_estrela]);
-        echo sizeof($estrela);
         if(sizeof($estrela)>0){
           $buraconegro =  DB::update('UPDATE buraco_negro
                   SET
@@ -35,7 +34,7 @@ class UBuraconegroController extends Controller
           }
         }
       }catch(Exception $e){
-        $msg = "Error grave";
+        $msg = "Error ao tentar modificar o Buraco Negro.";
         $rt = "/buraconegro/update";
         return view('result',compact('msg','rt'));
       }

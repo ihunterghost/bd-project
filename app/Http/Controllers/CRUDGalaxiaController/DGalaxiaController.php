@@ -17,11 +17,11 @@ class DGalaxiaController extends Controller
             $galaxia = DB::delete('DELETE FROM galaxia WHERE id_galaxia = ?',[$request->id_galaxia]);
 
             if($galaxia == 1){
-                $msg = "Galaxia de id: $request->id_estrela foi deletada com sucesso";
+                $msg = "Galáxia de id: $request->id_galaxia foi deletada com sucesso.";
                 $rt = "/galaxia";
                 return view('result',compact('msg','rt'));
             }else{
-                $msg = "Erro ao tentar deletar a galaxia";
+                $msg = "Erro ao tentar deletar a Galáxia.";
                 $rt = "/galaxia/delete";
                 return view('result',compact('msg','rt'));
             }

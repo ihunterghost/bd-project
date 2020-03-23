@@ -19,12 +19,12 @@ class CGalaxiaController extends Controller
     							[
     							$request->dist_terra,
     							$request->nome_galaxia]);
-            $msg = "Galaxia $request->nome_estrela inserida com sucesso";
+            $msg = "Galáxia $request->nome_galaxia inserida com sucesso.";
             $rt = "/galaxia";
             return view('result',compact('msg','rt'));
            
         }catch(Exception $e){
-            $msg = "Erro ao tentar inserir a galaxia";
+            $msg = "Erro ao tentar inserir a Galáxia.";
             $rt = "/galaxia/create";
             return view('result',compact('msg','rt'));
         }

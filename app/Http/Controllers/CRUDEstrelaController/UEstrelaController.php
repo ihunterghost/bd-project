@@ -43,18 +43,13 @@ class UEstrelaController extends Controller
     			    SET nome_estrela = ?,
     					tam_estrela = ?,
     					idade_estrela = ?,
-    					dist_terra_estrela = ?,
-              tipo = ?,
-              morte = ?
+    					dist_terra_estrela = ?
     			    WHERE id_estrela = ?',
     					[$request->nome_estrela,
                         $request->tam_estrela,
                         $request->idade_estrela,
                         $request->dist_terra_estrela,
-                        $request->tipo,
-                        $request->morreu,
-                        $request->id_estrela
-                        ]);
+                        $request->id_estrela]);
 
         if($estrela == 1){
           $msg = "Estrela de id: $request->id_estrela foi modificada com sucesso.";

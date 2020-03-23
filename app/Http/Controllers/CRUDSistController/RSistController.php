@@ -11,7 +11,7 @@ class RSistController extends Controller
 {
     public function readresponse(Request $request)
     {
-    	$sist = DB::select('SELECT * FROM sist_planetario WHERE nome_sist = ?',[$request->nome_sist]);
+    	$sist = DB::select('SELECT * FROM sist_planetario WHERE UPPER(nome_sist) = UPPER(?)',[$request->nome_sist]);
         return view('crudresponsesist/readresponse',compact('sist'));
     }
 

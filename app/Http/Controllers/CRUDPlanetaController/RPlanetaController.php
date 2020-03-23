@@ -11,7 +11,7 @@ class RPlanetaController extends Controller
 {
     public function readresponse(Request $request)
     {
-        $planeta = DB::select('SELECT * FROM planeta WHERE nome_planeta = ?',[$request->nome_planeta]);
+        $planeta = DB::select('SELECT * FROM planeta WHERE UPPER(nome_planeta) = UPPER(?)',[$request->nome_planeta]);
        
         if(sizeof($planeta) > 0){
             if(strcasecmp($planeta[0]->possui_sn_planeta,'1') == 0){

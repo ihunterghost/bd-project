@@ -55,7 +55,7 @@
                             <label for="eb">Estrela Binária</label>
                             <input type="radio" id="ga" name="tipo" value="Gigante Azul">
                             <label for="ga">Gigante Azul</label>
-                            <input type="radio" id="gv" name="tipo" value="Gigante Vermelho">
+                            <input type="radio" id="gv" name="tipo" value="Gigante Vermelha">
                             <label for="gv">Gigante Vermelha</label>
                         </p>
 			            <p>

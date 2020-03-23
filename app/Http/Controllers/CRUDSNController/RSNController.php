@@ -11,7 +11,7 @@ class RSnController extends Controller
 {
     public function readresponse(Request $request)
     {
-    	$sn = DB::select('SELECT * FROM satelite_natural WHERE nome_sn = ?',[$request->nome_sn]);
+    	$sn = DB::select('SELECT * FROM satelite_natural WHERE UPPER(nome_sn) = UPPER(?)',[$request->nome_sn]);
         return view('crudresponsesn/readresponse',compact('sn'));
     }
 

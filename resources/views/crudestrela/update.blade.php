@@ -50,27 +50,6 @@
                             <input type="text" name="dist_terra_estrela" placeholder="informe a distancia" required="required"
                             onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.charCode == 46">
                         </p>
-                        <p>
-                            Tipo
-                        <br>
-                            <input list="tipos" name="tipo">
-                                <datalist id="tipos">
-                                    <option value="Anã Vermelha">
-                                    <option value="Anã Branca">
-                                    <option value="Estrela Binária">
-                                    <option value="Gigante Azul">
-                                    <option value="Gigante Vermelho">
-                                </datalist>
-                        </p>
-                        <p>
-                            Morreu?
-                        <br>
-                            <input list="mortes" name="morreu">
-                                <datalist id="mortes">
-                                    <option value="Sim">
-                                    <option value="Não">
-                                </datalist>
-                        </p>
                         <p class="text-center">
                             <button type="submit" class=" badge badge-primary" name="send">Modificar</button>
                             <a class=" badge badge-secondary" href="{{ route('estrela')}}" name="back">Voltar</a>
