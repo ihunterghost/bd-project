@@ -39,20 +39,20 @@ class UOrbitarController extends Controller
                   $request->id_planeta,
                   $request->id_sn,
                   $request->id_orbitar]);
-        if($request->id_sn != ''){
-          $updateplaneta = DB::update("UPDATE planeta
-                                      SET
-                                      possui_sn_planeta = 'true'
-                                      
-                                      WHERE id_planeta = ?",
-                                      [$request->id_planeta]);
+          if($request->id_sn != ''){
+            $updateplaneta = DB::update("UPDATE planeta
+                                        SET
+                                        possui_sn_planeta = 'true'
+                                        
+                                        WHERE id_planeta = ?",
+                                        [$request->id_planeta]);
 
-          $updatestrela = DB::update("UPDATE estrela
-                                      SET
-                                      possui_sn_estrela = 'true'
-                                      
-                                      WHERE id_estrela = ?",
-                                      [$request->id_estrela]);
+            $updatestrela = DB::update("UPDATE estrela
+                                        SET
+                                        possui_sn_estrela = 'true'
+                                        
+                                        WHERE id_estrela = ?",
+                                        [$request->id_estrela]);
         }
         if($orbitar == 1){
           $msg = "Orbita de id: $request->id_orbitar foi modificada com sucesso.";
